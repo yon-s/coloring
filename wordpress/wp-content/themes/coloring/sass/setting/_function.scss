@@ -1,0 +1,5 @@
+//フォントサイズ
+$baseFontSize: 16;
+  @function rem($pixels) {
+    @return $pixels / $baseFontSize * 1rem;
+  }

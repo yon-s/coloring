@@ -1,0 +1,28 @@
+@mixin button($align-items,$justify-content,$text-align,$height, $width, $radius, $bg-color, $font-size, $font-weight, $color,$hover_width,$hover_height,$hover_top,$hover_bottom,$hover_left,$hover_right) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  text-align: $text-align;
+  a {
+    height: $height;
+    width: $width;
+    border-radius: $radius;
+    background-color: $bg-color;
+    position: relative;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $height;
+    color: $color;
+    text-align: center;
+    text-decoration: none;
+    &:hover{
+      position: absolute;
+      width:$hover_width;
+      height:$hover_height;
+      top:$hover_top;
+      bottom:$hover_bottom;
+      left:$hover_left;
+      right:$hover_right;
+    }
+  }
+}

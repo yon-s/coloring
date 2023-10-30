@@ -1,0 +1,260 @@
+.footer{
+  &__breadcrumb{
+    padding-bottom: 16px;
+    &--single{
+      @extend .footer__breadcrumb;
+    }
+    &--page{
+      @extend .footer__breadcrumb;
+      padding-left: $side_pading_mid;
+    }
+  }
+  &__bottom{
+    background-color: #{nth($colors, 1)};
+    color: #{nth($colors, 7)};
+    padding-top: 64px;
+    padding-bottom: 32px;
+    text-align: center;
+  }
+  &__link{
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  &__list-link{
+    color: inherit;
+    text-decoration: none;
+    font-size: rem(12);
+  }
+  &__copy-right{
+    margin-top:36px;
+    margin-bottom: 0;
+    font-size: rem(10);
+  }
+  &__caution{
+    margin-bottom: 0;
+    font-size: rem(10);
+  }
+}
+.pickup{
+  padding-top: 36px;
+  padding-bottom: 48px;
+  background-color: #{nth($colors, 6)};
+  &__ttl{
+    margin: 0;
+    &--center{
+      @extend .pickup__ttl;
+      text-align: center;
+    }
+  }
+  &__vol{
+    border-right:2px solid #{nth($colors, 1)};
+    font-family: "century-gothic",sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #{nth($colors, 6)};
+    text-shadow: #{nth($colors, 1)} 1px 1px 0px, #{nth($colors, 1)} -1px 1px 0px,
+#{nth($colors, 1)} 1px -1px 0px, #{nth($colors, 1)} -1px -1px 0px;
+  }
+  &__vol-bottom{
+    display: block;
+  }
+  &__img-outer{
+    width: 180px;
+    height: 180px;
+    background-color: #{nth($colors, 7)};
+    border: 1px solid;
+    border-radius: 50%;
+    @include flex(center,center);
+    overflow: hidden;
+  }
+  &__text{
+    height: 176px;
+    line-height: 1.75;
+    margin:0;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}
+//PCのみ
+@include mq(pc) { 
+  .pickup{
+    &__content-outer{
+      width: 800px;
+    }
+    &__content{
+      @include flex(0,center);
+    }
+    &__img-outer{
+      margin-left: 68px;
+      margin-right: 56px;
+      text-align: center;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    &__text{
+      width: 194px;
+    }
+    &__vol{
+      margin-left: 13.828125vw;
+    }
+  }
+}
+//1536px以上
+@include mq(maxpc) {
+  .pickup{
+    &__vol{
+      margin-left:6.82vw;
+    }
+  }
+}
+@include mq(tab) { 
+  .footer{
+    &__breadcrumb{
+      &--single{
+        padding-left: $side_pading_large;
+      }
+    }
+  }
+  .pickup{
+    &__ttl{
+      font-size: rem(36);
+    }
+    &__content-outer{
+      margin: 36px auto 0;
+    }
+    &__vol{
+      padding-right: 20px;
+      font-size: rem(28);
+    }
+    &__vol-bottom{
+      margin-top: 16px;
+    }
+  }
+  .buy{
+    &__button{
+      &--flex{
+        @include flex(center);
+        margin-top:24px;
+      }
+    }
+    &__button-link{
+      &--flex{
+        &:not(:first-child){
+          margin-left: 28px;
+        }
+      }
+    }
+  }
+  .footer{
+    &__bottom{
+      padding-top: 64px;
+      padding-bottom: 32px;
+    }
+    &__link{
+      margin-top: 28px;
+      @include flex(center);
+    }
+    &__list-item{
+      &:not(:first-child){
+        margin-left: 24px;
+      }
+    }
+    &__caution{
+      margin-top: 12px;
+    }
+  }
+}
+//タブレットのみ
+@include mq(tab-only) { 
+  .pickup{
+    &__content-outer{
+      width: 600px;
+      box-sizing: border-box;
+    }
+    &__img-outer{
+      margin-left: 40px;
+      margin-right: 5px;
+    }
+    &__vol{
+      margin-left: 11vw;
+    }
+  }
+}
+@include mq(tab-sp) { 
+  .pickup{
+    &__content{
+      @include flex(center,center,wrap);
+    }
+  }
+}
+//スマホ
+@include mq(sp) { 
+  .footer{
+    &__breadcrumb{
+      &--single{
+        padding-left: $side_pading_mid;
+      }
+    }
+  }
+  .pickup{
+    &__ttl{
+      font-size: rem(30);
+    }
+    &__content-outer{
+      margin: 30px auto 0;
+    }
+    &__vol{
+      font-size: rem(24);
+      padding-right: 18px;
+      height: 68px;
+    }
+    &__img-outer{
+      margin-left: 48px;
+    }
+    &__text{
+      width: 180px;
+      margin-left: 28.533vw;
+      margin-top:24px;
+    }
+  }
+  .buy{
+    &__button{
+      &--flex{
+        @include flex(end,center,wrap,0,1);
+        margin-left: 28.533vw;
+        margin-top:28px;
+      }
+    }
+    &__button-link{
+      &--flex{
+        &:not(:first-child){
+          margin-top: 12px;
+        } 
+      }
+    }
+  }
+  .footer{
+    &__bottom{
+      padding-top: 40px;
+      padding-bottom: 20px;
+    }
+    &__link{
+      margin-top: 24px;
+      @include flex(center,center,0,0,1);
+    }
+    &__list-item{
+      &:not(:first-child){
+        margin-top: 12px;
+      }
+    }
+    &__caution{
+      margin-top: 6px;
+    }
+  }
+}

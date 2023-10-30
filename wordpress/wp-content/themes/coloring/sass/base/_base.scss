@@ -1,0 +1,31 @@
+body{
+  background-color: #{nth($colors, 7)};
+  color: #{nth($colors, 1)};
+  font-size: rem(16);
+  font-family: "century-gothic","a-otf-gothic-bbb-pr6n",
+  "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Meiryo",
+    sans-serif;
+    font-weight: 400;
+    @include mq(tab) { 
+    letter-spacing: rem(0.8);
+    }
+    @include mq(sp) { 
+      letter-spacing: rem(1.2);
+    }
+    font-feature-settings: "palt";
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "century-gothic", "a-otf-futo-go-b101-pr6n",sans-serif;
+  font-weight: 700;
+}
+.wp-video{
+  width: 100% !important;
+  video{
+    width: 100%;
+    height: auto;
+  }
+}

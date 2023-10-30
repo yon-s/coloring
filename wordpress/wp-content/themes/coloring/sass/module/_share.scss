@@ -1,0 +1,29 @@
+.sns{
+  &__list{
+    @include flex(center);
+    list-style: none;
+    padding-left: 0;
+    &--menu{
+      @extend .sns__list;
+      margin-top: 40px;
+    }
+    &--footer{
+      @extend .sns__list;
+      margin:0;
+      @include flex(center);
+      color: #{nth($colors, 7)};
+    }
+  }
+  &__list-item:not(:first-child){
+    margin-left: 10px;
+  }
+  &__list-link--menu{
+    color: #{nth($colors, 1)};
+    &:hover{
+      color: #{nth($colors, 8)};
+    }
+  }
+  &__list-link--footer{
+    color: #{nth($colors, 7)}
+  }
+}

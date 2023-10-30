@@ -1,0 +1,415 @@
+#tinymce{
+  max-width: $maxPcContentWidth;
+  padding-top: 40px;
+  padding-left: $side_pading_large;
+  padding-right: $side_pading_large;
+  background-color: #{nth($colors, 7)};
+  color: #{nth($colors, 1)};
+  font-size: rem(16);
+  font-family: century-gothic,a-otf-gothic-bbb-pr6n
+  "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    font-weight: 400;
+    letter-spacing: rem(0.8);
+    font-feature-settings: "palt";
+  h1,h2,h3,h4,h5,h6{
+    font-family: century-gothic, a-otf-futo-go-b101-pr6n,sans-serif;
+    font-weight: 700;
+  }
+  p{
+    margin-top: 24px;
+    margin-bottom: 0;
+    line-height: 1.8;
+  }
+  h2{
+      font-size: rem(22);
+      margin-bottom: 0;
+      padding-bottom: 5px;
+      border-bottom: 2px solid;
+      line-height: 1.21;
+  }
+  h3{
+      font-size: rem(18);
+      margin-bottom: 0;
+      line-height: 1.21;
+  }
+  h4{
+      font-size: rem(16);
+      margin-top: 22px;
+      line-height: 1.21;
+      padding-bottom: 4px;
+      border-bottom: 2px solid;
+  }
+  h5{
+    font-size: rem(14);
+    margin-top: 26px;
+    line-height: 1.21;
+  }
+  ul{
+    margin-top:22px;
+    margin-bottom: 0;
+    padding-left: $side_pading_mid;
+  }
+  li{
+    line-height: 1.5;
+    &:not(:first-child):not(.app__button-link){
+      margin-top: 14px;
+    }
+  }
+  img{
+    width: 100%;
+    height: auto;
+    display:block;
+    vertical-align: top;
+    margin-top: 10px;
+  }
+  a:not(.content__gifopen){
+    color: #{nth($colors, 8)};
+  }
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:none;
+    .content__ul{
+      margin-top: 0;
+    }
+  }
+  tr:nth-child(odd){
+    background-color: #{nth($colors, 6)};
+  }
+  th,&td{
+    padding: 16px;
+    border:1px solid #{nth($colors, 6)};
+  }
+  th{
+    color: #{nth($colors, 7)};
+    background-color: #{nth($colors, 4)};
+  }
+  .content{
+    &__figcaption{
+      font-size: rem(11);
+      color: #{nth($colors, 3)};
+      margin-top: 12px;
+      margin-bottom: 0;
+      text-align: right;
+    }
+    &__link-btn-outer{
+      margin-top: 20px;
+      &--center{
+        @extend .content__link-btn-outer;
+        text-align: center;
+      }
+    }
+    &__gifopen{
+      position: relative;
+      border: 1px solid #{nth($colors, 1)};
+      text-decoration: none;
+      border-radius: 4px;
+      display: inline-block;
+      cursor: pointer;
+      padding: 12px 24px 12px 36px;
+      &::before{
+        position: absolute;
+        width: 12px;
+        height: 8px;
+        top: 0;
+        bottom: 0;
+        left: 16px;
+        margin-top: auto;
+        margin-bottom: auto;
+        content: '';
+        background: url($imgDir+"button/switch_icon--middle.png");
+        background-size: contain;
+      }
+    }
+    &__link-btn{
+      position: relative;
+      color: #{nth($colors, 8)};
+      border: 1px solid;
+      text-decoration: none;
+      padding: 12px 38px 12px 24px;
+      border-radius: 4px;
+      display: inline-block;
+      &::after{
+        position: absolute;
+        width: 12.5px;
+        height: 6px;
+        top: -2px;
+        bottom: 0;
+        right: 8px;
+        margin-top: auto;
+        margin-bottom: auto;
+        content: '';
+        background: url($imgDir+"button/link_icon_hover--min.png");
+        background-size: contain;
+      }
+    }
+    &__marker{
+      background:linear-gradient(transparent 70%, #{nth($colors, 8)} 0%);
+    }
+    &__blockquote{
+      position: relative;
+      box-sizing: border-box;
+      font-style: italic;
+      background-color: #{nth($colors, 6)};
+      margin:16px 0 0 0;
+      border-radius: 4px;
+      padding: 24px 4.8% 22px;
+      p {
+        padding: 0;
+        margin: 0;
+        line-height: 1.7;
+      }
+      cite {
+        display: block;
+        text-align: right;
+        color: #{nth($colors, 3)};
+        font-size: 0.9em;
+      }
+    }
+    &__img-mobile{
+      width: 280px;
+    }
+    &__gif-src{
+      display: none;
+    }
+    &__aside-main{
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
+      &--flex{
+        @extend .content__aside-main;
+        margin-left: -4%;
+        @include flex(0,0,wrap);
+      }
+      &--col{
+        @extend .content__aside-main;
+        @include flex(0,0,0,0,1);
+      }
+    }
+    &__update-info-ttl,&__point-ttl{
+      font-weight: bold;
+    }
+    &__point-ttl{
+      margin-top:24px;
+      margin-bottom: 0;
+    }
+    &__update-info{
+      border: solid 1px;
+      padding: 8px 16px;
+      color: #{nth($colors, 2)};
+    }
+    &__point{
+      color: #{nth($colors, 2)};
+      border: solid 1px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 24px;
+      padding-top: 24px;
+    }
+    &__ttl3{
+      margin-bottom: 0;
+      line-height: 1.21;
+      font-size: rem(18);
+      &--punctuation{
+        @extend .content__ttl3;
+        margin-top: 48px;
+      }
+    }
+    &__ul,&__ol,&__check-list{
+      margin-top:22px;
+      margin-bottom: 0;
+      padding-left: $side_pading_mid;
+    }
+    &__check-list{
+      list-style: none;
+    }
+    &__li,&__check-item,&__check-item-not{
+      line-height: 1.5;
+      &:not(:first-child){
+        margin-top: 14px;
+      }
+      a{
+        color: #{nth($colors, 8)};
+      }
+      a.outline__link{
+        color: inherit;
+      }
+    }
+    &__check-item{
+      &::before{
+        font-family: FontAwesome;
+        font-weight: 900;
+        content: '\f14a';
+        margin-right: 8px;
+      }
+    }
+    &__check-item-not{
+      color: #{nth($colors, 4)};
+      &::before{
+        font-family: FontAwesome;
+        font-weight: 900;
+        content: '\f0c8';
+        margin-right: 8px;
+      }
+    }
+    &__table-info{
+      font-size: rem(11);
+      color: #{nth($colors, 3)};
+      margin-bottom: 0;
+    }
+  } 
+  .caution{
+    &__no{
+      color: #{nth($colors, 3)};
+    }
+    &__list-item{
+      font-size: rem(12);
+      margin-bottom: 0;
+      line-height: 1.25;
+      &::before{
+        content: '※';
+      }
+    }
+  }
+  .product{
+    &__aside-main{
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
+      &--flex{
+        @extend .product__aside-main;
+        margin-left: -4%;
+        @include flex(0,0,wrap);
+      }
+    }
+    &__list-item{
+      width: $content_aside-main-width;
+        margin-left: $content_aside-main-m-left;
+        margin-top: $content_aside-main-m-top;
+    }
+    &__img-outer{
+      width: 100%;
+      height: auto;
+      display: block;
+      vertical-align: top;
+    }
+    &__img-figcaption{
+      font-size: rem(11);
+      color: #{nth($colors, 3)};
+      margin-bottom: 0;
+      text-align: right;
+      margin-top: 0;
+      min-height: 12px;
+    }
+    &__content{
+      margin-top:8px;
+    }
+    &__name{
+      margin: 0;
+      font-size: rem(14);
+    }
+    &__price{
+      font-size: rem(14);
+      margin-top: 8px;
+      margin-bottom: 0;
+      color: #{nth($colors, 3)};
+      text-align: right;
+    }
+    &__aside-main{
+      &--flex{
+        @extend .content__aside-main--flex;
+      }
+    }
+  }
+  .buy{
+    &__button{
+      list-style:none ;
+      padding-left:0;
+      &--flex{
+        margin-bottom: 0;
+        @extend .buy__button;
+      }
+      &--column{
+        margin-top: 12px;
+        margin-bottom: 0;
+        @extend .buy__button;
+        @include flex(center,center,wrap);
+      }
+    }
+    &__button-link{
+      &--column{
+        &:not(:first-child){
+          margin-top: 12px;
+        } 
+      }
+    }
+    &__link{
+      width:185px;
+      overflow: auto;
+      display: inline-block;
+      background-color: #{nth($colors, 7)};
+      border-radius: 2px;
+      text-align: center;
+      font-size: rem(14);
+      padding: 6px 0;
+      color: inherit;
+      text-decoration: none;
+      position: relative;
+      &::after{
+        position: absolute;
+        width: 12.5px;
+        height: 6px;
+        top: -2px;
+        bottom: 0;
+        right: 13px;
+        margin-top: auto;
+        margin-bottom: auto;
+        content: '';
+        background: url($imgDir+"button/link_icon--min.png");
+        background-size: contain;
+      }
+      &:hover{
+        color: #{nth($colors, 8)};
+        &::after{
+          background: url($imgDir+"button/link_icon_hover--min.png");
+          background-size: contain;
+        }
+      }
+      &--border{
+        @extend .buy__link;
+        border:1px solid;
+      }
+    }
+  }
+}
+.app{
+  &__button{
+    @include flex(between);
+    list-style: none;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 288px;
+    margin-top: 24px;
+  }
+  &__link{
+    display: inline-block;
+    img{
+      margin-top: 0;
+    }
+    &--ios{
+      @extend .app__link;
+      width:120px;
+    }
+    &--android{
+      @extend .app__link;
+      width:148px;
+    }
+  }
+}

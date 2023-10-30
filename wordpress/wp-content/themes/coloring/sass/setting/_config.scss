@@ -1,0 +1,54 @@
+//ブレイクポイント
+$breakPointList: 599px,600px,1024px;
+
+//PCレイアウト時の最小横幅
+$minPcContentWidth: 1000px;
+$maxPcContentWidth: 1536px;
+
+//メディアクエリ
+$mq: (
+  'sp': 'screen and (max-width: #{nth($breakPointList, 1)})',
+  'tab-sp': 'screen and (max-width: #{nth($breakPointList, 3)})',
+  'tab': 'screen and (min-width: #{nth($breakPointList, 2)})',
+  'tab-only': 'screen and (max-width: #{nth($breakPointList, 3)}) and (min-width: #{nth($breakPointList, 2)})',
+  'pc': 'print,screen and (min-width: #{nth($breakPointList, 3)})',
+  'maxpc': 'print,screen and (min-width: #{nth($maxPcContentWidth, 1)})'
+) !default;
+
+//画像格納ディレクトリ
+$imgDir: '../img/';
+
+//サイトで使用するカラー
+$colors: #0E212F, #2F3A43, #555757, #999A9A, #E1E7E7, #EBEFEF, #FBFCFC, #46AEF7;
+//SNSのカラー
+$snscolors:#1877F2, #1877F2, #2988D0,#00B900, #DE3E53, #0E212F;
+
+//左右のパディング
+$side_pading_mid:16px;
+$side_pading_large: 56px;
+//タイトル
+  //タイトルの下のオブジェクト
+  $ttl-bottom-obj--min:28px;
+  $ttl-bottom-obj-sp--min:22px;
+  $ttl-bottom-obj--mid:36px;
+  $ttl-bottom-obj-sp--mid:22px;
+  $ttl-bottom-obj--large:48px;
+  $ttl-bottom-obj-sp--large:36px;
+
+//content__aside-main--flex
+$content_aside-main-m-top:20px;
+$content_aside-main-sp-m-top:18px;
+//content__aside-main--flexの中身
+$content_aside-main-width: 224px;//width
+$content_aside-main-m-left: 4%;//margin:left
+
+//btn
+$btn-top-min:36px;
+$btn-top-mid:64px;
+$btn-top-mid-sp:30px;
+
+//.archive
+  //タイトル &__ttl
+    //line-height
+  $archive__ttl-lh-pc:1.6;
+  $archive__ttl-lh-sp:1.4;

@@ -1,0 +1,31 @@
+.search{
+  width: 256px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+  &:focus-within{
+    border-color: #{nth($colors, 8)};
+    .icon{
+      color: #{nth($colors, 8)};
+    }
+  }
+  &__form{
+    @include flex();
+  }
+  &__submit{
+    font-size: rem(17);
+    border: none;
+    margin-left: 0;
+    margin-right: 10px;
+    padding: 0;
+    background-color: initial;
+  }
+  &__input{
+    width: 219px;
+    background: inherit;
+    border: none;
+    outline: none;
+    &::placeholder{
+      color: #{nth($colors, 1)};
+    }
+  }
+}

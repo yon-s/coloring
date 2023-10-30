@@ -1,0 +1,148 @@
+.sidebar{
+  box-sizing: border-box;
+  height: max-content;
+  &--middle{
+    @extend .sidebar;
+  }
+  &--index-middle{
+    @extend .sidebar;
+  }
+  &--min{
+    @extend .sidebar;
+  }
+  &__ttl-en{
+    margin: 0;
+    font-size: rem(18);
+  }
+  &__ttl-ja{
+    font-size: rem(14);
+    margin-top: 10px;
+    margin-bottom:0; 
+  }
+  &__list{
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+}
+.sidebar-rank{
+  &__list{
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style-position:inside;
+  }  
+  &__list-item{
+    @include flex(between);
+  }
+  &__no{
+    font-size: 0.9375vw;
+    padding: 1.88172% 2.419355% 1.612903% 2.419355%;
+    background-color: #{nth($colors, 2)};
+    color: #{nth($colors, 7)};
+    box-sizing: border-box;
+    height: max-content;
+  }
+  &__archive{
+    &--middle,&--index-middle{
+      width: 88.865591%;
+    }
+    &--min{
+      width: 87.127733%;
+    }
+  }
+  &__thumbnail{
+    overflow: hidden;
+  }
+  &__ttl{
+    margin-bottom: 0;
+    font-size: rem(14);
+    &--middle,&--index-middle{
+      @extend .sidebar-rank__ttl;
+      margin-top:16px;
+    }
+    &--min{
+      @extend .sidebar-rank__ttl;
+      margin-top:10px;
+    }
+  }
+  &__link{
+    text-decoration: none;
+    color: inherit;
+    line-height: 1.25;
+  }
+  &__cat{
+    font-size: rem(12);
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #{nth($colors, 3)};
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+//PCのみ
+@include mq(tab) { 
+  %sidebar{
+    background-color: #{nth($colors, 6)};
+    padding:20px 20px 24px 20px;
+  }
+  .sidebar{
+    &--middle,&--index-middle{
+      @extend %sidebar;
+      width:33%;
+    }
+    &--min{
+      @extend %sidebar;
+      width:30%;
+    }
+  }
+  .sidebar-rank{
+    &__list-item{
+      &:not(:first-child){
+        margin-top: 22px;
+      }
+    }
+  }
+}
+//スマホ
+@include mq(sp) { 
+  %sidebar-sp{
+    margin-top:60px;
+  }
+  .sidebar{
+    &--middle{
+      @extend %sidebar-sp;
+    }
+    &--index-middle{
+      @extend %sidebar-sp;
+      padding-left: $side_pading_mid;
+      padding-right: $side_pading_mid;
+    }
+    &--min{
+      @extend %sidebar-sp;
+    }
+    &__contets{
+      overflow-x: scroll;
+      overflow-y:hidden;
+      -ms-overflow-style: none;  
+      scrollbar-width: none;
+      &::-webkit-scrollbar { 
+        display:none;
+      }
+    }
+  }
+  .sidebar-rank{
+    &__list{
+      width: max-content;
+      @include flex();
+    }
+    &__list-item{
+     width: 74.6vw;
+      &:not(:first-child){
+        margin-left: 4%;
+      }
+    }
+  }
+}

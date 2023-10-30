@@ -1,0 +1,23 @@
+# 「.htaccess」と「.htpasswd」など、.ht で始まるファイルを追跡しない
+.ht*
+.DS_Store
+logs
+*.log
+coloring.code-workspace
+ads.txt
+googlec0dfb5b205e99429.html
+maintenance.php
+index.php
+logs
+Search-Replace-DB-*
+wp-admin
+wp-includes
+wp-*.php
+**/*.php
+**/wordpress/*.html
+**/wp-content/languages
+**/wp-content/uploads
+**/wp-content/upgrade
+**/wp-content/plugins
+!**/wp-content/themes/coloring/**
+**/wp-content/themes/coloring/img
